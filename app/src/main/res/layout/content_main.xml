@@ -44,7 +44,6 @@
         app:layout_constraintStart_toStartOf="parent">
 
 
-
     </android.support.design.widget.BottomNavigationView>
 
     <FrameLayout
