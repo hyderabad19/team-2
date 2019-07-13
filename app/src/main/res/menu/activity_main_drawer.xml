@@ -23,6 +23,16 @@
             android:icon="@drawable/follow"
             android:title="People you Folllow" />
 
+        <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/feedback"
+                android:title="Help us Improve" />
+        
+        <item
+                android:id="@+id/nav_signout"
+                android:icon="@drawable/signout"
+                android:title="Sign out" />
+
     </group>
 
     <item android:title="Our Resources">
@@ -34,8 +44,7 @@
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/telephone"
-                android:title="Contact Us" />
+                android:title="Meet Us" />
         </menu>
     </item>
-
 </menu>
