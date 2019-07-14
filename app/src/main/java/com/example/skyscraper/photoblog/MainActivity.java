@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.bottom_nav_home : replaceFragment(homeFragment);
-                    return true;
+                        return true;
                     case R.id.bottom_nav_notif : replaceFragment(notificationFragment);
-                    return true;
+                        return true;
                     case R.id.bottom_nav_account : replaceFragment(accountFragment);
-                    return true;
+                        return true;
                     default:return false;
                 }
             }
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-       // bottomNavigationView.setVisibility(View.GONE);
+        // bottomNavigationView.setVisibility(View.GONE);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,SetupActiviity.class);
                 startActivity(intent);
                 return true;
-             
+
             default:
                 return false;
         }

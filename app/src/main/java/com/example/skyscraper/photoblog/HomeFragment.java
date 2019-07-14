@@ -66,13 +66,6 @@ public class HomeFragment extends Fragment {
         blogHomeRecyclerView.setAdapter(blogRecyclerAdater);
 
         if(FirebaseAuth.getInstance().getCurrentUser() != null) {
-//            String mail = FirebaseAuth.getInstance().getCurrentUser().getEmail().toString();
-//            addPostBtn = view.findViewById(R.id.addPostBtn);
-//            //Toast.makeText(container.getContext(),mail,Toast.LENGTH_SHORT).show();
-//            if(mail != "admin@gmail.com")
-//            {
-//                addPostBtn.setVisibility(View.GONE);
-//            }
 
             blogHomeRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
                 @Override
