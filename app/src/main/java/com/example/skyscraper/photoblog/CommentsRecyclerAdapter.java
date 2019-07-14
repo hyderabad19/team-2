@@ -32,13 +32,6 @@ public class CommentsRecyclerAdapter extends RecyclerView.Adapter<CommentsRecycl
         this.commentsList = commentsList;
     }
 
-    @Override
-    public CommentsRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.comment_list_item, parent, false);
-        context = parent.getContext();
-        return new CommentsRecyclerAdapter.ViewHolder(view);
-    }
 
     @Override
     public void onBindViewHolder(final CommentsRecyclerAdapter.ViewHolder holder, int position) {
@@ -70,6 +63,13 @@ public class CommentsRecyclerAdapter extends RecyclerView.Adapter<CommentsRecycl
     }
 
 
+    @Override
+    public CommentsRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.comment_list_item, parent, false);
+        context = parent.getContext();
+        return new CommentsRecyclerAdapter.ViewHolder(view);
+    }
     @Override
     public int getItemCount() {
 
