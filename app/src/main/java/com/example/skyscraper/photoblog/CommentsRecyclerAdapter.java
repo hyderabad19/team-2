@@ -29,9 +29,7 @@ public class CommentsRecyclerAdapter extends RecyclerView.Adapter<CommentsRecycl
     private FirebaseFirestore firebaseFirestore;
 
     public CommentsRecyclerAdapter(List<Comments> commentsList){
-
         this.commentsList = commentsList;
-
     }
 
     @Override

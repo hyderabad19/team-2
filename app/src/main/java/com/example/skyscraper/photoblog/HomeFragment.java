@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -41,6 +42,7 @@ public class HomeFragment extends Fragment {
 
     private DocumentSnapshot lastVisible;
     private Boolean isFirstPageFirstLoad = true;
+    private Button addPostBtn;
 
     private Context context;
 
@@ -64,7 +66,13 @@ public class HomeFragment extends Fragment {
         blogHomeRecyclerView.setAdapter(blogRecyclerAdater);
 
         if(FirebaseAuth.getInstance().getCurrentUser() != null) {
-
+//            String mail = FirebaseAuth.getInstance().getCurrentUser().getEmail().toString();
+//            addPostBtn = view.findViewById(R.id.addPostBtn);
+//            //Toast.makeText(container.getContext(),mail,Toast.LENGTH_SHORT).show();
+//            if(mail != "admin@gmail.com")
+//            {
+//                addPostBtn.setVisibility(View.GONE);
+//            }
 
             blogHomeRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
                 @Override
@@ -88,7 +96,6 @@ public class HomeFragment extends Fragment {
             firebaseFirestore = FirebaseFirestore.getInstance();
 
             Query firstQuery = firebaseFirestore.collection("Posts").orderBy("timestamp", Query.Direction.DESCENDING).limit(3);
-
 
             firstQuery.addSnapshotListener(getActivity(),new EventListener<QuerySnapshot>() {
                 @Override
@@ -119,7 +126,6 @@ public class HomeFragment extends Fragment {
                                         {
                                             User user = task.getResult().toObject(User.class);
 
-
                                             if(isFirstPageFirstLoad)
                                             {
                                                 userList.add(user);
@@ -133,10 +139,6 @@ public class HomeFragment extends Fragment {
                                         }//taskSuccesfull
                                     }
                                 });
-
-
-
-
                             }
                         }
 

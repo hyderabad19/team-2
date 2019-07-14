@@ -12,6 +12,15 @@
         android:id="@+id/main_action_settings_btn"
         android:title="Account Settings" />
     <item
+        android:id="@+id/main_action_badges_btn"
+        android:title="Badges" />
+    <item
+        android:id="@+id/main_action_survey_btn"
+        android:title="Survey" />
+    <item
+        android:id="@+id/main_action_test_btn"
+        android:title="Take Test" />
+    <item
         android:id="@+id/main_action_logout_btn"
         android:title="Logout" />
 </menu>

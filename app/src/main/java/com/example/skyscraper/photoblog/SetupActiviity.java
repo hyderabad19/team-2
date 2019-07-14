@@ -44,7 +44,10 @@ public class SetupActiviity extends AppCompatActivity {
     private CircleImageView setupImage;
     private Uri mainImageUri = null;
     private EditText setupName;
+    private EditText setupNum;
+    private EditText setupRes;
     private Button setupBtn;
+    private Button uploadBtn;
     private ProgressBar mProgressBar;
 
     private String userId;
@@ -71,8 +74,14 @@ public class SetupActiviity extends AppCompatActivity {
 
         setupImage = findViewById(R.id.setupProfile);
         setupName = findViewById(R.id.setupName);
+        setupNum = findViewById(R.id.setupMobile);
+        setupRes = findViewById(R.id.setupresume);
+        uploadBtn = findViewById(R.id.uploadfile);
+
         setupBtn = findViewById(R.id.setupBtn);
+
         mProgressBar = findViewById(R.id.progressBar);
+
 
         mProgressBar.setVisibility(View.VISIBLE);
         setupBtn.setEnabled(false);
@@ -169,6 +178,35 @@ public class SetupActiviity extends AppCompatActivity {
             }
         });
 
+        uploadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //after marshmello we need permission to access storage_write
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                {
+                    if(ContextCompat.checkSelfPermission(SetupActiviity.this , Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+                    {
+                        ActivityCompat.requestPermissions(SetupActiviity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE} , 1);
+                        Toast.makeText(SetupActiviity.this,"Permission Denied",Toast.LENGTH_SHORT).show();
+
+                    }else
+                    {
+                        Toast.makeText(SetupActiviity.this,"Permission Allowed",Toast.LENGTH_SHORT).show();
+                        CropImage.activity()
+                                .setGuidelines(CropImageView.Guidelines.ON)
+                                .setAspectRatio(1,1)
+                                .start(SetupActiviity.this);
+                    }
+                }else
+                {
+                    Toast.makeText(SetupActiviity.this,"Permission Allowed",Toast.LENGTH_SHORT).show();
+                    CropImage.activity()
+                            .setGuidelines(CropImageView.Guidelines.ON)
+                            .setAspectRatio(1,1)
+                            .start(SetupActiviity.this);
+                }
+            }
+        });
 
         setupImage.setOnClickListener(new View.OnClickListener() {
             @Override

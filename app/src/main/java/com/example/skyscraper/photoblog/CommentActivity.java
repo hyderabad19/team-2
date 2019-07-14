@@ -92,8 +92,6 @@ public class CommentActivity extends AppCompatActivity {
                                     commentsList.add(comments);
                                     commentsRecyclerAdapter.notifyDataSetChanged();
 
-
-
                                 }
                             }
 
@@ -101,8 +99,6 @@ public class CommentActivity extends AppCompatActivity {
 
                     }
                 });
-
-
 
 
 

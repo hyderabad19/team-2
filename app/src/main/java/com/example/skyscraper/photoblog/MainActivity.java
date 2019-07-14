@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         mainToolbar = findViewById(R.id.mainToolbar);
         setSupportActionBar(mainToolbar);
-        getSupportActionBar().setTitle("Photo blog");
+        getSupportActionBar().setTitle("Dr Grow");
 
         addPostBtn = findViewById(R.id.addPostBtn);
         bottomNavigationView = findViewById(R.id.bottom_nav);
@@ -145,7 +144,12 @@ public class MainActivity extends AppCompatActivity {
         {
             String currentUserId = mAuth.getCurrentUser().getUid();
 
+            String currentUser = mAuth.getCurrentUser().getEmail();
 
+            if(currentUser != "admin@gmail.com")
+            {
+
+            }
 
             firebaseFirestore.collection("Users").document(currentUserId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -206,5 +210,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();//so that user can't come back to previous activity by pressing the back button
     }
-
 }

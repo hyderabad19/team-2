@@ -64,7 +64,7 @@ public class NewPostActivity extends AppCompatActivity {
 
         newPostToolbar = findViewById(R.id.new_post_toolbar);
         setSupportActionBar(newPostToolbar);
-        getSupportActionBar().setTitle("Photo Blog");
+        getSupportActionBar().setTitle("Dr Grow");
         getSupportActionBar().setHomeButtonEnabled(true);
 
         newPostImg = findViewById(R.id.newPostImg);
