@@ -1,3 +1,5 @@
+##### The code ("Code") in this repository was created solely by the student teams during a coding competition hosted by JPMorgan Chase Bank, N.A. ("JPMC").						JPMC did not create or contribute to the development of the Code.  This Code is provided AS IS and JPMC makes no warranty of any kind, express or implied, as to the Code,						including but not limited to, merchantability, satisfactory quality, non-infringement, title or fitness for a particular purpose or use.
+
 # Blogster
 ### It is a blog app to post images .
 <img src="https://user-images.githubusercontent.com/27882376/43730637-9eefea7a-99c9-11e8-9b6d-161448259af9.png" width="200" height="200" />
